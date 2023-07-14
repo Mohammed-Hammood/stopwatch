@@ -1,5 +1,8 @@
 "use client";
+
 import { ThemeType, TimerTypes } from "types";
+
+const isBrowser = typeof window !== 'undefined' ? true : false;
 
 type LocalStorageTypes = {
     timers: TimerTypes[];
@@ -25,7 +28,7 @@ const InitialData: LocalStorageTypes = {
 
 export class LocalStorage {
     __name__: string = 'stopwatch';
-    data: LocalStorageTypes = JSON.parse(localStorage.getItem(this.__name__) || JSON.stringify(InitialData));
+    data: LocalStorageTypes = JSON.parse((isBrowser ? localStorage.getItem(this.__name__) : null) || JSON.stringify(InitialData));
 
     save: () => void;
     constructor() {
@@ -50,7 +53,7 @@ export class LocalStorage {
 
     getActiveTimer(): TimerTypes | null {
         const activeTimer = this.data.timers.find(item => item.active);
-        if(activeTimer)return activeTimer;
+        if (activeTimer) return activeTimer;
         return null
     }
 
