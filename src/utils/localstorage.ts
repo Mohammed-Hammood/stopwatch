@@ -1,3 +1,4 @@
+"use client";
 import { ThemeType, TimerTypes } from "types";
 
 type LocalStorageTypes = {
