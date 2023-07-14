@@ -24,11 +24,11 @@ const Wrapper = styled.div<ControlPanelProps>`
                 display: flex;
                 border: 1px solid var(--specialColor);
                 align-items: center;
-                height:40px;
                 width:100%;
                 justify-content: flex-start;
                 background-color: var(--specialColor);
-                overflow: hidden;
+                height: 42px;
+                
                 .title__wrapper, .text__wrapper, .keyValue__wrapper{
                     color:white;
                     height:100%;
@@ -102,12 +102,11 @@ const Wrapper = styled.div<ControlPanelProps>`
         flex-wrap:nowrap;
         justify-content: center;
         gap:8px;
-        height:auto;
         background-color: inherit;
         border:none;
-
+        height: auto;
         .content__wrapper {
-            flex:1 1 44%;
+            height: 42px;
             justify-content: space-between;
             overflow: hidden;
             border:1px solid rgba(88,88,88, 0.1);
@@ -140,6 +139,7 @@ const CustomButton = styled.button<ButtonProps>`
         display: flex;
         align-items:center;
         justify-content: center;
+        height: 40px;
         border: none;
         outline: none;
         padding:"12px 10px";

@@ -34,7 +34,7 @@ export class LocalStorage {
     constructor() {
         this.save = (): void => {
             if (isBrowser) {
-                localStorage.setItem(this.__name__, JSON.stringify(this.data))
+                localStorage.setItem(this.__name__, JSON.stringify(this.data));
             }
         };
         this.save();
