@@ -32,7 +32,11 @@ export class LocalStorage {
 
     save: () => void;
     constructor() {
-        this.save = (): void => localStorage.setItem(this.__name__, JSON.stringify(this.data));
+        this.save = (): void => {
+            if (isBrowser) {
+                localStorage.setItem(this.__name__, JSON.stringify(this.data))
+            }
+        };
         this.save();
     }
     setTheme(theme: ThemeType) {
