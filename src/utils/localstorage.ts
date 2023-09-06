@@ -60,5 +60,4 @@ export class LocalStorage {
         if (activeTimer) return activeTimer;
         return null
     }
-
 }
